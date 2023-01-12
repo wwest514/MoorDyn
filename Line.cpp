@@ -686,9 +686,9 @@ void Line::doRHS( const double* X,  double* Xd, const double time, const double 
 		if (r[i][2] < -env.WtrDpth)
 		{
 			if (i==0)
-				B[i][2] = ( (-env.WtrDpth-r[i][2])*env.kb - rd[i][2]*env.cb) * 0.5*(          d*l[i-1] );
-			else if (i==N)
 				B[i][2] = ( (-env.WtrDpth-r[i][2])*env.kb - rd[i][2]*env.cb) * 0.5*( d*l[i]            );
+			else if (i==N)
+				B[i][2] = ( (-env.WtrDpth-r[i][2])*env.kb - rd[i][2]*env.cb) * 0.5*(          d*l[i-1] );
 			else
 				B[i][2] = ( (-env.WtrDpth-r[i][2])*env.kb - rd[i][2]*env.cb) * 0.5*( d*l[i] + d*l[i-1] );
 			
